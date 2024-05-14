@@ -37,17 +37,14 @@ Vectoriza el texto de la columna tags y elige la distancia del coseno como métr
 
 Diseña una función de recomendación basada en la distancia del coseno que devuelva las 5 películas más similares a la película dada.
 
-python
-Copiar código
-def recommend(movie):
-    movie_index = new_df[new_df["title"] == movie].index[0]
-    distances = similarity[movie_index]
-    movie_list = sorted(list(enumerate(distances)), reverse=True, key=lambda x: x[1])[1:6]
+
+    def recommend(movie):
+        movie_index = new_df[new_df["title"] == movie].index[0]
+        distances = similarity[movie_index]
+        movie_list = sorted(list(enumerate(distances)), reverse=True, key=lambda x: x[1])[1:6]
     
     for i in movie_list:
         print(new_df.iloc[i[0]].title)
 Úsala de la siguiente manera:
 
-python
-Copiar código
-recommend("Introduce una película")
+    recommend("Introduce una película")
